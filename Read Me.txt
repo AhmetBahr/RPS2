@@ -1,0 +1,1 @@
+Push 1; 3 elemanlı taş kağıt makasın kodları; animasyon, eleman seçme, elemanları karşılaştırma ve sonucu gösterme kodları
