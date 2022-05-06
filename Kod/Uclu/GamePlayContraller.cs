@@ -24,6 +24,14 @@ public class GamePlayContraller : MonoBehaviour
     private Image playerChocie_Ing, oppenentChoci_Img;
     [SerializeField]
     private TMP_Text infoText;
+    public TMP_Text WeText;
+    public TMP_Text EnamyText;
+    public int WeScore;
+    public int EnemyScore;
+    public bool gameOn = true;
+    public WeWin winMenu;
+    public WeLose loseMenu;
+    
 
     private GameChoi player_Choice = GameChoi.NONE, opponent_Choice = GameChoi.NONE;
 
@@ -32,6 +40,8 @@ public class GamePlayContraller : MonoBehaviour
     void Awake()
     {
         animationControll = GetComponent<AnimatorConttrol>();
+        winMenu= Object.FindObjectOfType<WeWin>();
+        loseMenu = Object.FindObjectOfType<WeLose>();
     }
     public void SetChoices(GameChoi gamechoi) {
         switch (gamechoi)
@@ -54,7 +64,6 @@ public class GamePlayContraller : MonoBehaviour
         SetOpponentChoice();
         Determinewinner();
     }
-
 
     public void SetOpponentChoice()
     {
@@ -90,19 +99,38 @@ public class GamePlayContraller : MonoBehaviour
        if(player_Choice == GameChoi.ROCK && opponent_Choice == GameChoi.PAPER)
         {
             infoText.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
+
             return;
 
         }
        if(player_Choice == GameChoi.PAPER && opponent_Choice == GameChoi.SCISSORS)
         {
             infoText.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
        if(player_Choice == GameChoi.SCISSORS && opponent_Choice == GameChoi.ROCK)
         {
             infoText.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
@@ -111,6 +139,12 @@ public class GamePlayContraller : MonoBehaviour
         if (player_Choice == GameChoi.ROCK && opponent_Choice == GameChoi.SCISSORS)
         {
             infoText.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
 
@@ -118,12 +152,27 @@ public class GamePlayContraller : MonoBehaviour
         if (player_Choice == GameChoi.PAPER && opponent_Choice == GameChoi.ROCK)
         {
             infoText.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi.SCISSORS && opponent_Choice == GameChoi.PAPER)
         {
+            
             infoText.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
+            
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
@@ -142,4 +191,18 @@ public class GamePlayContraller : MonoBehaviour
         animationControll.ResetAnimations();
 
     }
+
+    private void WeWin()
+    {
+        winMenu.toggleEndMenuWin();
+    }
+
+    private void WeLose()
+    {
+        loseMenu.toggleEndMenuLose();
+        
+    
+    }
+
+
 }

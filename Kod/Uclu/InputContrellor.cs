@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class InputContrellor : MonoBehaviour
 {
@@ -14,7 +16,17 @@ public class InputContrellor : MonoBehaviour
 
 
     }
-        
+    public void Back()
+    {
+        SceneManager.LoadScene("Menu");
+
+    }
+    public void PalyAgain()
+    {
+        SceneManager.LoadScene("Uclu");
+
+    }
+
     public void GetChoice()
     {
         string choiceName = UnityEngine.EventSystems.

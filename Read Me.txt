@@ -1,2 +1,3 @@
 Push 1; 3 elemanlı taş kağıt makasın kodları; animasyon, eleman seçme, elemanları karşılaştırma ve sonucu gösterme kodları
 Push 2; Beş elemanlı Ta,Ka,Ma,Ke,Sp eklendi önceki kodlardaki hatalar düzeltildi 
+Push 3; Menü kodu yazıldı, Oyun sayfalarında görsel güncelleme ve onların kodları yazıldı, Oyunu bitirmelik kazanma ve kaybetme kodları yazıldı

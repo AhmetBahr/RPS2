@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class InputContrellorbes : MonoBehaviour
 {
@@ -13,6 +15,17 @@ public class InputContrellorbes : MonoBehaviour
         animationController = GetComponent<Animatorcontbes>();
         gameplayController = GetComponent<GamePlayControllerBes>();
 
+
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("Menu");
+
+    }
+    public void PalyAgain()
+    {
+        SceneManager.LoadScene("Besli");
 
     }
 

@@ -23,6 +23,14 @@ public class GamePlayControllerBes : MonoBehaviour
     private Image playerChocie_Ing, oppenentChoci_Img;
     [SerializeField]
     private TMP_Text infotest2;
+    public TMP_Text WeText;
+    public TMP_Text EnamyText;
+    public int WeScore;
+    public int EnemyScore;
+    public bool gameOn = true;
+    public WeWin winMenu;
+    public WeLose loseMenu;
+
 
     private GameChoi2 player_Choice = GameChoi2.NONE, opponent_Choice = GameChoi2.NONE;
 
@@ -31,6 +39,8 @@ public class GamePlayControllerBes : MonoBehaviour
     void Awake()
     {
         animationControl = GetComponent<Animatorcontbes>();
+        winMenu = Object.FindObjectOfType<WeWin>();
+        loseMenu = Object.FindObjectOfType<WeLose>();
     }
     public void SetChoices(GameChoi2 gamechoi2)
     {
@@ -105,60 +115,120 @@ public class GamePlayControllerBes : MonoBehaviour
         if(player_Choice == GameChoi2.ROCK && opponent_Choice == GameChoi2.PAPER)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.ROCK && opponent_Choice == GameChoi2.SPOCK)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.PAPER && opponent_Choice == GameChoi2.SCISSORS)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.PAPER && opponent_Choice == GameChoi2.LIZARD)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SCISSORS && opponent_Choice == GameChoi2.ROCK)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SCISSORS && opponent_Choice == GameChoi2.SPOCK)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.LIZARD && opponent_Choice == GameChoi2.ROCK)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.LIZARD && opponent_Choice == GameChoi2.SCISSORS)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SPOCK && opponent_Choice == GameChoi2.PAPER)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SPOCK && opponent_Choice == GameChoi2.LIZARD)
         {
             infotest2.text = "Lose";
+            EnemyScore++;
+            EnamyText.text = EnemyScore.ToString();
+            if (EnemyScore == 5)
+            {
+                WeLose();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
@@ -167,60 +237,120 @@ public class GamePlayControllerBes : MonoBehaviour
         if (player_Choice == GameChoi2.ROCK && opponent_Choice == GameChoi2.SCISSORS)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.ROCK && opponent_Choice == GameChoi2.LIZARD)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.PAPER && opponent_Choice == GameChoi2.ROCK)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.PAPER && opponent_Choice == GameChoi2.SPOCK)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SCISSORS && opponent_Choice == GameChoi2.PAPER)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SCISSORS && opponent_Choice == GameChoi2.LIZARD)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.LIZARD && opponent_Choice == GameChoi2.PAPER)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.LIZARD && opponent_Choice == GameChoi2.SPOCK)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SPOCK && opponent_Choice == GameChoi2.ROCK)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
         if (player_Choice == GameChoi2.SPOCK && opponent_Choice == GameChoi2.SCISSORS)
         {
             infotest2.text = "Win";
+            WeScore++;
+            WeText.text = WeScore.ToString();
+            if (WeScore == 5)
+            {
+                WeWin();
+            }
             StartCoroutine(DisplayWinnerAndRestart());
             return;
         }
@@ -238,4 +368,17 @@ public class GamePlayControllerBes : MonoBehaviour
         animationControl.ResetAnimations();
 
     }
+
+    private void WeWin()
+    {
+        winMenu.toggleEndMenuWin();
+    }
+
+    private void WeLose()
+    {
+        loseMenu.toggleEndMenuLose();
+
+
+    }
+
 }
